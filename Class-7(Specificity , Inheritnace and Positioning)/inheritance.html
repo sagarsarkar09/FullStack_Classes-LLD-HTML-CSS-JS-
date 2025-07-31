@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+        .parent{
+            color : blue;
+            font-size: 20px;
+        }
+        .child{
+            color : inherit;
+            font-size : 40px;
+        }
+
+        .another-child{
+            color:red;
+            font-size: inherit;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+        I am the parent
+        <div class="child">
+          I am the child and I inherit color and font-size
+        </div>
+        <div class="another-child">
+          I am another child but I override the color
+        </div>
+      </div>
+  </body>
+</html>

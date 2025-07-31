@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Design with Multiple Columns</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            margin: 20px;
+            flex-wrap: wrap; /* Allow items to wrap when needed */
+        }
+        .column {
+            flex: 1;
+            padding: 20px;
+            border: 1px solid #ccc;
+            margin: 10px;
+            min-width: 200px; /* Prevent columns from becoming too narrow */
+        }
+        .column:nth-child(1) {
+            background-color: #f4f4f4;
+        }
+        .column:nth-child(2) {
+            background-color: #eaeaea;
+        }
+        .column:nth-child(3) {
+            background-color: #d3d3d3;
+        }
+
+        /* Media Query for screens smaller than 768px */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column; /* Stack the columns vertically */
+            }
+        }
+
+        /* Media Query for screens smaller than 480px */
+        @media (max-width: 480px) {
+            .column {
+                padding: 10px; /* Reduce padding on smaller screens */
+                font-size: 14px; /* Smaller font size for better readability */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="column">
+            <h2>Column 1</h2>
+            <p>This is some content for the first column. On smaller screens, the layout will stack vertically for better readability.</p>
+        </div>
+        <div class="column">
+            <h2>Column 2</h2>
+            <p>This is some content for the second column. On smaller screens, the layout will stack vertically for better readability.</p>
+        </div>
+        <div class="column">
+            <h2>Column 3</h2>
+            <p>This is some content for the third column. On smaller screens, the layout will stack vertically for better readability.</p>
+        </div>
+    </div>
+</body>
+</html>

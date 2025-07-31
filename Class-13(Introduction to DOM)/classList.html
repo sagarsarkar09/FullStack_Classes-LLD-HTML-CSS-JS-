@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .inActive {
+      background-color: red;
+    }
+
+    .active {
+      background-color: green;
+    }
+  </style>
+  <body>
+    <button class="inActive">I am Inactive</button>
+  </body>
+
+  <script>
+         let ToggleButton = document.querySelector('button')
+         console.log(ToggleButton)
+
+         // classList
+
+         console.log(ToggleButton.classList)
+
+         ToggleButton.addEventListener('click' , function(){
+           if(ToggleButton.classList.contains('inActive')){
+             ToggleButton.classList.remove('inActive')
+             ToggleButton.classList.add('active')
+             ToggleButton.innerText = 'I am Active'
+           }
+           else{
+            ToggleButton.classList.remove('active')
+             ToggleButton.classList.add('inActive')
+              ToggleButton.innerText = 'I am In Active'
+
+           }
+         })
+
+  </script>
+</html>

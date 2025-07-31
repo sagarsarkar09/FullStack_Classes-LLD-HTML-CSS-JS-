@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      #grandParent {
+        background-color: red;
+        height: 100px;
+        width: 100px;
+      }
+      #parent {
+        background-color: green;
+        height: 75px;
+        width: 75px;
+      }
+      #child {
+        background-color: blue;
+        height: 50px;
+        width: 50px;
+      }
+    </style>
+   
+
+
+  </head>
+
+  <body>
+    <div id="grandParent">
+      <div id="parent">
+        <div id="child"></div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    //   const grandParent = document.getElementById('grandParent')
+    //   const parent = document.getElementById('parent')
+    //   const child = document.getElementById('child')
+    //   const body = document.querySelector('body')
+
+     const grandParent =document.getElementById('grandParent')
+     const parent =document.getElementById('parent')
+     const body = document.getElementById('child')
+
+
+    //   grandParent.addEventListener('click', function(){
+    //     console.log('Grand Parent Clicked')
+    //   } , true )
+
+    grandParent.addEventListener('click', function(){
+        console.log('Grand Parent Clicked')
+    })
+
+    parent.addEventListener('click', function(){
+        console.log(' Parent Clicked')
+      }, true )
+
+    child.addEventListener('click', function(){
+        console.log('child Clicked')
+      },true)
+
+    //   body.addEventListener('click' , function(){
+    //     console.log('body clicked')
+    //   })
+
+
+  </script>
+</html>
