@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Debouncing</title>
+  </head>
+  <body>
+    <input id="input_field" type="text" />
+  </body>
+  <script>
+    let inputField = document.getElementById("input_field");
+
+    // Unoptimized code
+
+    function processInput() {
+      console.log("Processing Input");
+    }
+
+    //    inputField.addEventListener('keydown' , processInput)
+
+    // Optimized code with Debouncing
+
+    function debounce(func, wait) {
+      let timeout;
+      console.log(timeout)
+
+      return function executedFunction() {
+        // if the timer has crosses the x duration the we call the function
+        const later = function () {
+       
+          clearTimeout(timeout); // 2 sec will be cleared
+          func(); // processInput
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait); // 2 sec
+    
+      };
+    }
+
+    const debouncedProcessInput = debounce(processInput, 2000);
+
+    inputField.addEventListener("keydown", debouncedProcessInput);
+  </script>
+</html>
